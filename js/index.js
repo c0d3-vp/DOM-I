@@ -86,6 +86,8 @@ p[5].textContent = contact["address"]
 p[6].textContent = contact["phone"]
 p[7].textContent = contact["email"]
 
+p[5].innerHTML = siteContent['contact']['address'].split('t S').join('t<br>S')
+
 let footer = document.querySelector("footer");
 footer.textContent = siteContent["footer"]["copyright"]
 
