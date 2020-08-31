@@ -40,3 +40,77 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navLinks = document.querySelectorAll("nav a");
+navLinks.forEach((navItem, index) => {
+  navItem.innerText = siteContent["nav"][`nav-item-${index + 1}`]
+})
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].style.color = "green";
+}
+
+
+let ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"])
+
+
+let header = document.querySelector("h1");
+header.innerHTML = siteContent["cta"]["h1"].split(' ').join('<br>')
+
+ 
+let button = document.querySelector("button");
+button.textContent = siteContent["cta"]["button"]
+
+let mainContent = siteContent["main-content"]
+let contact = siteContent["contact"]
+
+let h4 = document.querySelectorAll("h4");
+h4[0].textContent = mainContent["features-h4"]
+h4[1].textContent = mainContent["about-h4"]
+h4[2].textContent = mainContent["services-h4"]
+h4[3].textContent = mainContent["product-h4"]
+h4[4].textContent = mainContent["vision-h4"]
+h4[5].textContent = contact["contact-h4"]
+
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute('src', mainContent["middle-img-src"])
+
+let p = document.querySelectorAll("p");
+p[0].textContent = mainContent["features-content"]
+p[1].textContent = mainContent["about-content"]
+p[2].textContent = mainContent["services-content"]
+p[3].textContent = mainContent["product-content"]
+p[4].textContent = mainContent["vision-content"]
+p[5].textContent = contact["address"]
+p[6].textContent = contact["phone"]
+p[7].textContent = contact["email"]
+
+let footer = document.querySelector("footer");
+footer.textContent = siteContent["footer"]["copyright"]
+
+let button2 = document.createElement('button');
+button2.innerHTML = 'Do Something';
+const footer2 = document.querySelector('footer');
+footer2.appendChild(button2);
+
+
+button2.addEventListener('click', ()=>{
+  h4[0].style.color = "blue";
+  h4[1].style.color = "red";
+  h4[2].style.color = "pink";
+  h4[3].style.color = "green";
+  h4[4].style.color = "grey";
+  h4[5].style.color = "orange";
+})
+
+//.appendChild()
+const nav = document.querySelector('nav');
+let a = document.createElement('a');
+a.textContent = "Goodbye";
+nav.appendChild(a);
+
+//.prepend()
+let a2 = document.createElement('a');
+a2.textContent = "Hello";
+nav.prepend(a2);
