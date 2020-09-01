@@ -1,0 +1,2 @@
+modules.node = list of modules that come with the project
+It's a case-by-case scenario getElementBy or querySelector
